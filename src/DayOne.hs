@@ -5,6 +5,8 @@ module DayOne
 
 import System.Environment
 import Data.Char
+import qualified Data.IntMap as IM
+import Data.Maybe
 
 readLines :: FilePath -> IO [String]
 readLines = fmap lines . readFile
@@ -21,15 +23,20 @@ readInput = do
   putStrLn content
   return intlist
 
-solveDayOne :: IO Int
+solveDayOne :: IO ()
 solveDayOne = do
   ins <- readInput
+  solvePartI ins
+  solvePartII ins
+
+solvePartI :: [Int] -> IO ()
+solvePartI ins = do
   let offset = if head ins == last ins 
       then head ins
       else 0
-  let res = sumClone (head ins) (tail ins) offset
-  putStrLn $ show res
-  return res
+  let respartI = sumClone (head ins) (tail ins) offset
+  putStrLn "part I:"
+  putStrLn $ show respartI
     where 
       sumClone x [] out = out
       sumClone x (n:xs) out = 
@@ -37,3 +44,21 @@ solveDayOne = do
            then sumClone n xs (out+x)
            else sumClone n xs out
 
+solvePartII :: [Int] -> IO ()
+solvePartII ins' = do
+  putStrLn "part II:"
+  putStrLn $ show $ sumAntipodes n 0
+    where 
+      ins = IM.fromList $ zip [1..] ins'
+      n = IM.size ins
+      next i = let ofs = mod (i + (quot n 2)) n
+                in if ofs == 0
+                      then n
+                      else ofs
+      sumAntipodes 0 out = out
+      sumAntipodes i out = 
+        let vi = fromJust $ IM.lookup i ins
+            antii = fromJust $ IM.lookup (next i) ins
+         in if vi == antii  
+                 then sumAntipodes (i-1) (out+vi)
+                 else sumAntipodes (i-1) out

@@ -12,8 +12,6 @@ main = do
   putStrLn "solving day: "
   putStrLn day
   case day of 
-    "1" -> do
-      solveDayOne
-      return ()
-    _ -> putStrLn "you must pick a day to solve ex `aoc17-exe 3`"
+    "1" -> solveDayOne
+    _   -> putStrLn "you must pick a day to solve ex `aoc17-exe 3`"
   return ()
