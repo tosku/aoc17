@@ -21,6 +21,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     DayOne
                      , DayTwo
+                     , DayThree
   build-depends:       base >= 4.7 && < 5
                      , containers
                      , bytestring

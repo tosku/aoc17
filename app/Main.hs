@@ -3,6 +3,7 @@ module Main where
 import System.Environment
 import DayOne
 import DayTwo
+import DayThree
 
 main :: IO ()
 main = do
@@ -15,5 +16,6 @@ main = do
   case day of 
     "1" -> solveDayOne
     "2" -> solveDayTwo
+    "3" -> solveDayThree
     _   -> putStrLn "you must pick a day to solve ex `aoc17-exe 3`"
   return ()
