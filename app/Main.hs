@@ -4,6 +4,7 @@ import System.Environment
 import DayOne
 import DayTwo
 import DayThree
+import DayFour
 
 main :: IO ()
 main = do
@@ -17,5 +18,6 @@ main = do
     "1" -> solveDayOne
     "2" -> solveDayTwo
     "3" -> solveDayThree
+    "4" -> solveDayFour
     _   -> putStrLn "you must pick a day to solve ex `aoc17-exe 3`"
   return ()
