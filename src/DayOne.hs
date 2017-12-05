@@ -1,6 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module DayOne
-    ( solveDayOne
+    ( solution
     ) where
 
 import System.Environment
@@ -23,8 +23,8 @@ readInput = do
   putStrLn content
   return intlist
 
-solveDayOne :: IO ()
-solveDayOne = do
+solution :: IO ()
+solution = do
   ins <- readInput
   solvePartI ins
   solvePartII ins

@@ -23,6 +23,11 @@ library
                      , DayTwo
                      , DayThree
                      , DayFour
+                     , DayFive
+                     , DaySix
+                     , DaySeven
+                     , DayEight
+                     , DayNine
   build-depends:       base >= 4.7 && < 5
                      , containers
                      , bytestring

@@ -1,6 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module DayFour
-    ( solveDayFour
+    ( solution
     ) where
 
 import System.Environment
@@ -46,8 +46,8 @@ solvePartII = do
   putStrLn "Part II"
   putStrLn $ show result
 
-solveDayFour :: IO ()
-solveDayFour = do
+solution :: IO ()
+solution = do
   solvePartI
   solvePartII
 

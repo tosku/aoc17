@@ -1,6 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module DayThree
-    ( solveDayThree
+    ( solution
     ) where
 
 import System.Environment
@@ -109,8 +109,8 @@ distfromcenter i =
   max ((quot (side i) 2) - snd(distfromcorner i)) 
     (snd(distfromcorner i) - quot (side i) 2)
 
-solveDayThree :: IO ()
-solveDayThree = do
+solution :: IO ()
+solution = do
   putStrLn "bottom right corner"
   putStrLn $ show $ corner input RD 
   putStrLn "radius"
