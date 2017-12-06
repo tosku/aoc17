@@ -6,10 +6,10 @@ import qualified DayTwo as Two
 import qualified DayThree as Three
 import qualified DayFour as Four
 import qualified DayFive as Five
-import qualified DayFive as Six
-import qualified DayFive as Seven
-import qualified DayFive as Eight
-import qualified DayFive as Nine
+import qualified DaySix as Six
+import qualified DaySeven as Seven
+import qualified DayEight as Eight
+import qualified DayNine as Nine
 
 main :: IO ()
 main = do

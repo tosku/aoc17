@@ -33,6 +33,7 @@ library
                      , bytestring
                      , cassava
                      , vector
+                     , split
   default-language:    Haskell2010
 
 executable aoc17-exe
